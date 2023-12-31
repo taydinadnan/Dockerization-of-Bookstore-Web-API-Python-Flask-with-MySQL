@@ -1,15 +1,23 @@
-version: "3"
+version: "3.7"
 services:
-  web:
-    build: .
-    ports:
-      - "80:80"
-    depends_on:
-      - db
-  db:
+  database:
     image: mysql:5.7
     environment: 
       - MYSQL_ROOT_PASSWORD: 123456Pl
       - MYSQL_DATABASE: bookstore_db
       - MYSQL_USER: clarusway
       - MYSQL_PASSWORD: Clarusway_1
+    networks:
+      - bookstore-web
+  my-app:
+    image: turgay/bookstore:latest
+    restart: always
+    depends_on:
+      - database
+    networks:
+      - bookstore-web
+    ports:
+      - "80:80"
+networks:
+  bookstore-web:
+    driver: bridge
