@@ -13,7 +13,7 @@ resource "aws_instance" "web_server" {
 
    user_data = <<-EOF
               #!/bin/bash
-              git clone https://github.com/your-username/your-repo.git /home/ec2-user/bookstore
+              git clone https://github.com/taydinadnan/Dockerization-of-Bookstore-Web-API-Python-Flask-with-MySQL.git /home/ec2-user/bookstore
               cd /home/ec2-user/bookstore
               docker-compose up -d
               EOF
