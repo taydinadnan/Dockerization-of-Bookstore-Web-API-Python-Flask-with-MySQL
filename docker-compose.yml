@@ -1,0 +1,15 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    environment: 
+      - MYSQL_ROOT_PASSWORD: 123456Pl
+      - MYSQL_DATABASE: bookstore_db
+      - MYSQL_USER: clarusway
+      - MYSQL_PASSWORD: Clarusway_1
