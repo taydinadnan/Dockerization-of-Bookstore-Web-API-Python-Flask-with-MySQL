@@ -23,8 +23,8 @@ curl -SL https://github.com/docker/compose/releases/download/v2.20.3/docker-comp
 chmod +x /usr/local/bin/docker-compose
 
 # Set your GitHub username and token as variables
-github_username="***********"
-github_token="**************************"
+github_username="*********"
+github_token="*********************************"
 
 # Clone the Bookstore Web API repository with username and token
 git clone https://${github_username}:${github_token}@github.com/taydinadnan/Dockerization-of-Bookstore-Web-API-Python-Flask-with-MySQL.git
